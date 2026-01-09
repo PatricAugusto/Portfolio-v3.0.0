@@ -1,4 +1,5 @@
 import StyledProvider from '@/lib/StyledProvider';
+import Navbar from '@/components/Navbar';
 
 export const metadata = {
   title: 'Meu Portfólio Full Stack',
@@ -10,6 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body>
         <StyledProvider>
+          <Navbar />
           {children}
         </StyledProvider>
       </body>

@@ -1,7 +1,4 @@
-import StyledComponentsRegistry from '@/lib/registry';
-import { ThemeProvider } from 'styled-components';
-import { theme } from '@/styles/theme';
-import { GlobalStyle } from '@/styles/GlobalStyles';
+import StyledProvider from '@/lib/StyledProvider';
 
 export const metadata = {
   title: 'Meu Portfólio Full Stack',
@@ -12,12 +9,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
       <body>
-        <StyledComponentsRegistry>
-          <ThemeProvider theme={theme}>
-            <GlobalStyle />
-            {children}
-          </ThemeProvider>
-        </StyledComponentsRegistry>
+        <StyledProvider>
+          {children}
+        </StyledProvider>
       </body>
     </html>
   );

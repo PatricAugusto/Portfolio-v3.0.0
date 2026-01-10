@@ -2,6 +2,7 @@
 
 import styled from 'styled-components';
 import GlassCard from '@/components/GlassCard';
+import Projects from '@/components/Projects';
 
 const PageWrapper = styled.main`
   min-height: 100vh;
@@ -191,6 +192,7 @@ export default function Home() {
             </ImageWrapper>
           </ImageSection>
         </HeroContent>
+        <Projects />
       </GlassCard>
     </PageWrapper>
   );

@@ -17,7 +17,7 @@ const BackgroundBlob = styled.div`
   position: absolute;
   width: 500px;
   height: 500px;
-  background: radial-gradient(circle, ${props => props.theme.colors.secondary} 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(0, 242, 255, 0.15) 0%, transparent 70%);
   border-radius: 50%;
   z-index: -1;
   filter: blur(80px);
@@ -27,7 +27,7 @@ const BackgroundBlob = styled.div`
 `;
 
 const AccentBlob = styled(BackgroundBlob)`
-  background: radial-gradient(circle, ${props => props.theme.colors.accent} 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(112, 0, 255, 0.15) 0%, transparent 70%);
   bottom: 10%;
   right: 10%;
   top: auto;

@@ -1,98 +1,112 @@
 'use client';
 
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import GlassCard from './GlassCard';
 
-const SkillsWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
+const scroll = keyframes`
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-250px * 5)); } 
+`;
+
+const MarqueeContainer = styled.div`
   margin-top: 40px;
-`;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 0;
 
-const SkillCategory = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-`;
-
-const CategoryHeader = styled.h3`
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  color: ${props => props.theme.colors.secondary};
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 800;
-
+  &::before, &::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    width: 150px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  &::before {
+    left: 0;
+    top: 0;
+    background: linear-gradient(to right, ${props => props.theme.colors.primary} 0%, transparent 100%);
+  }
   &::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(90deg, ${props => props.theme.colors.secondary}44, transparent);
+    right: 0;
+    top: 0;
+    background: linear-gradient(to left, ${props => props.theme.colors.primary} 0%, transparent 100%);
   }
 `;
 
-const BadgeGrid = styled.div`
+const MarqueeTrack = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-`;
-
-const SkillBadge = styled.div`
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid ${props => props.theme.colors.border};
-  padding: 10px 18px;
-  border-radius: 4px; /* Mais retangular para um look 'corporate' */
-  font-size: 0.85rem;
-  color: ${props => props.theme.colors.light};
-  transition: all 0.3s ease;
-  font-family: 'Fira Code', monospace; /* Fonte tech se disponível */
+  width: calc(250px * 10); 
+  animation: ${scroll} 25s linear infinite;
 
   &:hover {
-    background: ${props => props.theme.colors.secondary}11;
+    animation-play-state: paused;
+  }
+`;
+
+const SkillCard = styled.div`
+  width: 230px;
+  height: 120px;
+  margin: 0 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid ${props => props.theme.colors.border};
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+
+  &:hover {
     border-color: ${props => props.theme.colors.secondary};
-    box-shadow: 0 0 15px ${props => props.theme.colors.secondary}33;
-    transform: translateY(-2px);
+    background: rgba(0, 242, 255, 0.05);
+    box-shadow: 0 0 20px ${props => props.theme.colors.secondary}22;
+  }
+
+  span.label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: ${props => props.theme.colors.accent};
+    font-weight: 800;
+  }
+
+  span.value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: ${props => props.theme.colors.light};
   }
 `;
 
 export default function Skills() {
-  const stack = [
-    {
-      category: "Artificial Intelligence",
-      skills: ["Machine Learning", "LLMs", "Prompt Engineering", "Python", "OpenAI API"]
-    },
-    {
-      category: "Backend & Core",
-      skills: ["C#", ".NET Core", "Entity Framework", "SQL Server", "Architecture"]
-    },
-    {
-      category: "Frontend & Web",
-      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Styled Components"]
-    }
+  const coreStack = [
+    { label: "Expertise", value: "AI Specialist" },
+    { label: "Frontend", value: "React & Next.js" },
+    { label: "Backend", value: "C# & .NET" },
+    { label: "Database", value: "SQL Server" },
+    { label: "Languages", value: "TS & JS" },
   ];
 
+  const fullList = [...coreStack, ...coreStack];
+
   return (
-    <GlassCard style={{ maxWidth: '1100px' }} id="skills">
-      <h2 style={{ color: '#fff', fontSize: '2.2rem' }}>Technical <span>Proficiency_</span></h2>
-      <p style={{ color: '#e0e0e6', opacity: 0.6, marginTop: '10px' }}>
-        Combinando o poder da IA com arquiteturas escaláveis em .NET e interfaces modernas.
-      </p>
+    <GlassCard style={{ maxWidth: '1100px', overflow: 'hidden' }} id="skills">
+      <h2 style={{ color: '#fff', fontSize: '2rem', textAlign: 'center' }}>
+        Core <span>Tech_Stack</span>
+      </h2>
       
-      <SkillsWrapper>
-        {stack.map((group, index) => (
-          <SkillCategory key={index}>
-            <CategoryHeader>{group.category}</CategoryHeader>
-            <BadgeGrid>
-              {group.skills.map(skill => (
-                <SkillBadge key={skill}>{skill}</SkillBadge>
-              ))}
-            </BadgeGrid>
-          </SkillCategory>
-        ))}
-      </SkillsWrapper>
+      <MarqueeContainer>
+        <MarqueeTrack>
+          {fullList.map((skill, index) => (
+            <SkillCard key={index}>
+              <span className="label">{skill.label}</span>
+              <span className="value">{skill.value}</span>
+            </SkillCard>
+          ))}
+        </MarqueeTrack>
+      </MarqueeContainer>
     </GlassCard>
   );
 }

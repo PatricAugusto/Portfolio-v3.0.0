@@ -93,6 +93,74 @@ const BackgroundBlob = styled.div`
   left: -100px;
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  @media (max-width: 968px) {
+    justify-content: center;
+  }
+`;
+
+const PrimaryButton = styled.button`
+  background: linear-gradient(135deg, ${props => props.theme.colors.secondary} 0%, ${props => props.theme.colors.accent} 100%);
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(112, 0, 255, 0.4);
+    filter: brightness(1.1);
+  }
+`;
+
+const SecondaryButton = styled.button`
+  background: transparent;
+  color: ${props => props.theme.colors.secondary};
+  border: 1px solid ${props => props.theme.colors.secondary}55; 
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: ${props => props.theme.colors.secondary}11; 
+    border-color: ${props => props.theme.colors.secondary};
+    text-shadow: 0 0 10px ${props => props.theme.colors.secondary};
+  }
+`;
+
+const SocialLinks = styled.div`
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  
+  a {
+    color: ${props => props.theme.colors.light};
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+
+    &:hover {
+      opacity: 1;
+      color: ${props => props.theme.colors.secondary};
+      transform: scale(1.1);
+    }
+  }
+`;
+
 export default function Home() {
   return (
     <PageWrapper>
@@ -107,6 +175,14 @@ export default function Home() {
               Sou um Desenvolvedor Full Stack especializado em construir sistemas robustos 
               e interfaces futuristas. Foco em performance, estética e código limpo.
             </Description>
+            <ButtonGroup>
+             <PrimaryButton>View Projects</PrimaryButton>
+             <SecondaryButton>Download CV</SecondaryButton>
+              </ButtonGroup>
+                <SocialLinks>
+                  <a href="#">GitHub</a>
+                  <a href="#">LinkedIn</a>
+                </SocialLinks>
           </TextSection>
 
           <ImageSection>

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import GlassCard from '@/components/GlassCard';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+import Contact from '@/components/Contact';
 
 const PageWrapper = styled.main`
   min-height: 100vh;
@@ -195,6 +196,7 @@ export default function Home() {
         </HeroContent>
         <Projects />
         <Skills />
+        <Contact />
       </GlassCard>
     </PageWrapper>
   );

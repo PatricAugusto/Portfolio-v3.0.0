@@ -5,7 +5,7 @@ import GlassCard from './GlassCard';
 
 const SkillsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 40px;
   margin-top: 40px;
 `;
@@ -17,74 +17,76 @@ const SkillCategory = styled.div`
 `;
 
 const CategoryHeader = styled.h3`
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  color: ${props => props.theme.colors.accent};
+  letter-spacing: 2.5px;
+  color: ${props => props.theme.colors.secondary};
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
+  font-weight: 800;
 
-  &::before {
+  &::after {
     content: '';
-    width: 8px;
-    height: 8px;
-    background: ${props => props.theme.colors.accent};
-    box-shadow: 0 0 10px ${props => props.theme.colors.accent};
-    border-radius: 50%;
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, ${props => props.theme.colors.secondary}44, transparent);
   }
 `;
 
 const BadgeGrid = styled.div`
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 `;
 
 const SkillBadge = styled.div`
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid ${props => props.theme.colors.border};
-  padding: 8px 16px;
-  border-radius: 6px;
+  padding: 10px 18px;
+  border-radius: 4px; /* Mais retangular para um look 'corporate' */
   font-size: 0.85rem;
   color: ${props => props.theme.colors.light};
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
+  transition: all 0.3s ease;
+  font-family: 'Fira Code', monospace; /* Fonte tech se disponível */
 
   &:hover {
     background: ${props => props.theme.colors.secondary}11;
     border-color: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.secondary};
-    transform: translateX(5px);
-    box-shadow: -5px 0 15px ${props => props.theme.colors.secondary}22;
+    box-shadow: 0 0 15px ${props => props.theme.colors.secondary}33;
+    transform: translateY(-2px);
   }
 `;
 
 export default function Skills() {
-  const skillData = [
+  const stack = [
     {
-      category: "Frontend",
-      skills: ["React", "Next.js", "TypeScript", "Styled Components", "Tailwind"]
+      category: "Artificial Intelligence",
+      skills: ["Machine Learning", "LLMs", "Prompt Engineering", "Python", "OpenAI API"]
     },
     {
-      category: "Backend",
-      skills: ["Node.js", "PostgreSQL", "MongoDB", "Rest API", "GraphQL"]
+      category: "Backend & Core",
+      skills: ["C#", ".NET Core", "Entity Framework", "SQL Server", "Architecture"]
     },
     {
-      category: "DevOps & Tools",
-      skills: ["Docker", "AWS", "Git", "Figma", "Jest"]
+      category: "Frontend & Web",
+      skills: ["React", "Next.js", "TypeScript", "JavaScript", "Styled Components"]
     }
   ];
 
   return (
     <GlassCard style={{ maxWidth: '1100px' }} id="skills">
-      <h2 style={{ color: '#fff', fontSize: '2rem' }}>Technical <span>Arsenal_</span></h2>
+      <h2 style={{ color: '#fff', fontSize: '2.2rem' }}>Technical <span>Proficiency_</span></h2>
+      <p style={{ color: '#e0e0e6', opacity: 0.6, marginTop: '10px' }}>
+        Combinando o poder da IA com arquiteturas escaláveis em .NET e interfaces modernas.
+      </p>
+      
       <SkillsWrapper>
-        {skillData.map((item, index) => (
+        {stack.map((group, index) => (
           <SkillCategory key={index}>
-            <CategoryHeader>{item.category}</CategoryHeader>
+            <CategoryHeader>{group.category}</CategoryHeader>
             <BadgeGrid>
-              {item.skills.map(skill => (
+              {group.skills.map(skill => (
                 <SkillBadge key={skill}>{skill}</SkillBadge>
               ))}
             </BadgeGrid>

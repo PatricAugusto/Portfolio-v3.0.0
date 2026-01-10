@@ -10,6 +10,7 @@ const GlassCard = styled.div`
   box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
   position: relative;
   overflow: hidden;
+  width: 100%;
 
   &::before {
     content: "";

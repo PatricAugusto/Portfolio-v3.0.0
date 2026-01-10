@@ -196,7 +196,7 @@ export default function Home() {
         </HeroContent>
         <Projects />
         <Skills />
-        <Contact />
+        <Contact/>
       </GlassCard>
     </PageWrapper>
   );

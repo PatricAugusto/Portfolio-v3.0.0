@@ -47,7 +47,7 @@ const Input = styled.input`
   }
 `;
 
-const TextArea = styled(Input).as('textarea')`
+const TextArea = styled(Input).attrs({ as: 'textarea' })`
   min-height: 150px;
   resize: vertical;
 `;

@@ -20,14 +20,44 @@ const NavContainer = styled.nav`
   box-sizing: border-box; 
 `;
 
-const Logo = styled.div`
+const LogoWrapper = styled(Link)`
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.02);
+  }
+`;
+
+const LogoImage = styled.img`
+  width: 40px;  
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 5px ${props => props.theme.colors.secondary}44);
+
+  @media (max-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
+const LogoText = styled.div`
   font-size: 1.5rem;
   font-weight: 800;
   color: ${props => props.theme.colors.light};
   letter-spacing: -1px;
+  font-family: 'Inter', sans-serif;
 
   span {
     color: ${props => props.theme.colors.secondary};
+    text-shadow: 0 0 10px ${props => props.theme.colors.secondary}66;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
   }
 `;
 
@@ -112,14 +142,17 @@ export default function Navbar() {
   return (
     <NavContainer>
       <NavContent>
-      <Logo>
-        DEV<span>.AI</span>
-      </Logo>
+      <LogoWrapper href="/">
+          <LogoImage src="/logoPort.png" alt="Dev AI Logo" />
+          <LogoText>
+            DEV<span>.AI</span>
+          </LogoText>
+        </LogoWrapper>
 
       <NavLinks>
-        <NavLink href="#projects">Projects</NavLink>
+        <NavLink href="#projects">Projetos</NavLink>
         <NavLink href="#skills">Skills</NavLink>
-        <NavLink href="#contact">Contact</NavLink>
+        <NavLink href="#contact">Contato</NavLink>
       </NavLinks>
 
       <HireButton 
@@ -128,7 +161,7 @@ export default function Navbar() {
         rel="noopener noreferrer"
         aria-label="Contactar via WhatsApp"
       >
-        Hire Me
+        Entre em contato!
       </HireButton>
       </NavContent>
     </NavContainer>

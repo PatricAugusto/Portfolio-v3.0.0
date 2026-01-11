@@ -85,7 +85,7 @@ export default function Skills() {
     { label: "Expertise", value: "AI Specialist" },
     { label: "Frontend", value: "React & Next.js" },
     { label: "Backend", value: "C# & .NET" },
-    { label: "Database", value: "SQL Server" },
+    { label: "Database", value: "SQL" },
     { label: "Languages", value: "TS & JS" },
   ];
 

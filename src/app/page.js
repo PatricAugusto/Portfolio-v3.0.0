@@ -42,9 +42,83 @@ const HeroContent = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 3.5rem;
+  font-size: 3.8rem;
+  line-height: 1;
   color: ${props => props.theme.colors.light};
-  span { color: ${props => props.theme.colors.secondary}; text-shadow: 0 0 15px #00f2ff55; }
+  margin: 0;
+
+  span {
+    display: block;
+    color: ${props => props.theme.colors.secondary};
+    text-shadow: 0 0 20px ${props => props.theme.colors.secondary}44;
+  }
+
+  @media (max-width: 768px) { font-size: 2.8rem; }
+`;
+
+const TextSection = styled.div`
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+`;
+
+const ExpandedDescription = styled.p`
+  font-size: 1.15rem;
+  color: ${props => props.theme.colors.light}cc;
+  line-height: 1.8;
+  max-width: 600px;
+  
+  strong {
+    color: ${props => props.theme.colors.secondary};
+    font-weight: 600;
+  }
+`;
+
+const HeroButtonGroup = styled.div`
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+
+  @media (max-width: 968px) { justify-content: center; }
+`;
+
+const SocialButton = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  
+  &.linkedin {
+    background: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.primary};
+    box-shadow: 0 0 20px ${props => props.theme.colors.secondary}33;
+
+    &:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.1);
+      box-shadow: 0 0 30px ${props => props.theme.colors.secondary}55;
+    }
+  }
+
+  &.github {
+    border: 1px solid ${props => props.theme.colors.secondary}44;
+    color: ${props => props.theme.colors.secondary};
+    background: transparent;
+
+    &:hover {
+      background: ${props => props.theme.colors.secondary}11;
+      border-color: ${props => props.theme.colors.secondary};
+      transform: translateY(-3px);
+    }
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -66,15 +140,34 @@ export default function Home() {
       <BackgroundBlob />
       <AccentBlob />
 
-      <GlassCard style={{ maxWidth: '1100px' }}>
+      <GlassCard style={{ maxWidth: '1150px' }}>
         <HeroContent>
-          <div>
-            <Title>Crafting Digital <span>Experiences.</span></Title>
-            <p style={{opacity: 0.7, margin: '20px 0 30px'}}>Dev Full Stack focado em interfaces de alta performance.</p>
-          </div>
+          
+          <TextSection>
+            <Title>
+              Full Stack <span>AI Engineer.</span>
+            </Title>
+            
+            <ExpandedDescription>
+              Especialista em unir a potência da <strong>Inteligência Artificial</strong> com arquiteturas escaláveis em <strong>C# e .NET</strong>. 
+              Desenvolvo experiências digitais de alta performance utilizando <strong>React e Next.js</strong>, 
+              focando em transformar dados complexos em interfaces intuitivas e modernas.
+            </ExpandedDescription>
+
+            <HeroButtonGroup>
+              <SocialButton href="https://linkedin.com/in/seu-usuario" target="_blank" className="linkedin">
+                LinkedIn
+              </SocialButton>
+              <SocialButton href="https://github.com/seu-usuario" target="_blank" className="github">
+                GitHub
+              </SocialButton>
+            </HeroButtonGroup>
+          </TextSection>
+
           <ImageWrapper>
             <img src="/PerfilOficialFoto.png" alt="Profile" />
           </ImageWrapper>
+          
         </HeroContent>
       </GlassCard>
 

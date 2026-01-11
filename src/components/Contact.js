@@ -1,7 +1,8 @@
 'use client';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import styled, { keyframes, css } from 'styled-components';
 import GlassCard from './GlassCard';
+import emailjs from '@emailjs/browser';
 
 const spin = keyframes`
   0% { transform: rotate(0deg); }
@@ -125,25 +126,26 @@ const StatusMessage = styled.div`
 `;
 
 export default function Contact() {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const form = useRef(); 
   const [status, setStatus] = useState('idle'); 
 
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
+  const sendEmail = (e) => {
     e.preventDefault();
     setStatus('loading');
 
-    setTimeout(() => {
-      if (formData.name && formData.email && formData.message) {
-        setStatus('success');
-        setFormData({ name: '', email: '', message: '' }); 
-      } else {
-        setStatus('error');
-      }
-    }, 2000);
+    const SERVICE_ID = process.env.NEXT_PUBLIC_SERVICE_ID;
+    const TEMPLATE_ID = process.env.NEXT_PUBLIC_TEMPLATE_ID;
+    const PUBLIC_KEY = process.env.NEXT_PUBLIC_KEY;
+
+    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
+      .then((result) => {
+          console.log(result.text);
+          setStatus('success');
+          e.target.reset(); 
+      }, (error) => {
+          console.log(error.text);
+          setStatus('error');
+      });
   };
 
   return (
@@ -165,14 +167,14 @@ export default function Contact() {
           </button>
         </StatusMessage>
       ) : (
-        <Form onSubmit={handleSubmit} $loading={status === 'loading'}>
+        <Form ref={form} onSubmit={sendEmail} $loading={status === 'loading'}>
           <InputGroup>
             <Label>Codename / Name</Label>
             <Input 
+              type="text"
               name="name" 
               placeholder="John Doe" 
-              value={formData.name} 
-              onChange={handleChange} 
+              required
               disabled={status === 'loading'}
             />
           </InputGroup>
@@ -180,11 +182,10 @@ export default function Contact() {
           <InputGroup>
             <Label>Communication Channel / Email</Label>
             <Input 
+              type="email"
               name="email" 
-              type="email" 
               placeholder="dev@example.com" 
-              value={formData.email} 
-              onChange={handleChange}
+              required
               disabled={status === 'loading'}
             />
           </InputGroup>
@@ -194,15 +195,14 @@ export default function Contact() {
             <TextArea 
               name="message" 
               placeholder="Descreva a missão..." 
-              value={formData.message} 
-              onChange={handleChange}
+              required
               disabled={status === 'loading'}
             />
           </InputGroup>
           
           {status === 'error' && (
             <StatusMessage $type="error">
-              Error: All fields are required to establish connection.
+              Connection Failed. Please try again or check console.
             </StatusMessage>
           )}
 

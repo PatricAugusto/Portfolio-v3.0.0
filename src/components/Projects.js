@@ -103,38 +103,31 @@ const ActionLink = styled.a`
 export default function Projects() {
   const projects = [
     {
-      title: "AI Dashboard",
-      desc: "Plataforma de análise de dados com integração de IA.",
+      title: "O Corte Perfeito",
+      desc: "website oficial da Barbearia Premium, refletindo digitalmente a experiência impecável e a excelência no corte.",
       image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
-      demo: "#",
-      github: "#"
+      demo: "https://barber-glass-neo.vercel.app/",
+      github: "https://github.com/PatricAugusto/barber-glass-neo"
     },
     {
-      title: "Crypto Wallet",
-      desc: "App para gestão de ativos digitais com segurança avançada.",
+      title: "Escritório de Advocacia",
+      desc: "Este projeto foi desenvolvido para um escritório de advocacia, focada em um design moderno, elegante e de alta conversão, alinhado com as tendências de UI/UX de 2025.",
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
-      demo: "#",
-      github: "#"
+      demo: "https://free-template-juridico-v1.vercel.app/",
+      github: "https://github.com/PatricAugusto/Free-Template-Juridico-v1"
     },
     {
-      title: "Crypto Wallet",
-      desc: "App para gestão de ativos digitais com segurança avançada.",
+      title: "Coffee Blend",
+      desc: "Cafeteria que busca combinar um design acolhedor com funcionalidades de e-commerce (carrinho/checkout)",
       image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
-      demo: "#",
-      github: "#"
-    },
-    {
-      title: "Crypto Wallet",
-      desc: "App para gestão de ativos digitais com segurança avançada.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
-      demo: "#",
-      github: "#"
+      demo: "https://free-template-cafeteria-v1.vercel.app/",
+      github: "https://github.com/PatricAugusto/Free-Template-Cafeteria-v1"
     }
   ];
 
   return (
     <GlassCard style={{ maxWidth: '1100px' }} id="projects">
-      <h2 style={{ color: '#fff', fontSize: '2rem' }}>Featured <span>Projects_</span></h2>
+      <h2 style={{ color: '#fff', fontSize: '2rem' }}>Projetos em <span>Destaque_</span></h2>
       <ProjectGrid>
         {projects.map((p, i) => (
           <InnerCard key={i}>

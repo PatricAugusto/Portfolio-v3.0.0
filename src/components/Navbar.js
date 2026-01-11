@@ -23,9 +23,10 @@ const NavContainer = styled.nav`
 const LogoWrapper = styled(Link)`
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   text-decoration: none;
   transition: transform 0.3s ease;
+  flex-shrink: 1;
 
   &:hover {
     transform: scale(1.02);
@@ -33,8 +34,8 @@ const LogoWrapper = styled(Link)`
 `;
 
 const LogoImage = styled.img`
-  width: 40px;  
-  height: 40px;
+  width: 80px;  
+  height: 80px;
   object-fit: contain;
   filter: drop-shadow(0 0 5px ${props => props.theme.colors.secondary}44);
 
@@ -45,9 +46,10 @@ const LogoImage = styled.img`
 `;
 
 const LogoText = styled.div`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 800;
   color: ${props => props.theme.colors.light};
+  white-space: nowrap;
   letter-spacing: -1px;
   font-family: 'Inter', sans-serif;
 
@@ -57,7 +59,7 @@ const LogoText = styled.div`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 `;
 
@@ -92,10 +94,10 @@ const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
   @media (max-width: 768px) {
-    padding: 0 20px;
+    padding: 0 15px;
 
     .nav-links-desktop {
       display: none;
@@ -117,18 +119,28 @@ const HireButton = styled.a`
   cursor: pointer;
   display: flex;
   align-items: center;
+  white-space: nowrap;
+  flex-shrink: 0;
   gap: 8px;
+
+  &::before {
+    content: "Entre em contato!";
+  }
 
   &:hover {
     background: ${props => props.theme.colors.secondary};
     color: ${props => props.theme.colors.primary};
-    box-shadow: 0 0 20px ${props => props.theme.colors.secondary}44;
+    box-shadow: 0 0 15px ${props => props.theme.colors.secondary}44;
     transform: translateY(-2px);
   }
 
   @media (max-width: 480px) {
-    padding: 8px 12px;
+    padding: 8px 15px;
     font-size: 0.75rem;
+
+    &::before {
+      content: "Contato"; 
+    }
   }
 `;
 
@@ -145,7 +157,7 @@ export default function Navbar() {
       <LogoWrapper href="/">
           <LogoImage src="/logoPort.png" alt="Dev AI Logo" />
           <LogoText>
-            DEV<span>.AI</span>
+            Patric<span>.Augusto</span>
           </LogoText>
         </LogoWrapper>
 
@@ -161,7 +173,6 @@ export default function Navbar() {
         rel="noopener noreferrer"
         aria-label="Contactar via WhatsApp"
       >
-        Entre em contato!
       </HireButton>
       </NavContent>
     </NavContainer>

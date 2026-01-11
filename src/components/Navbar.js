@@ -8,18 +8,16 @@ const NavContainer = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  padding: 20px 40px;
+  height: 80px; 
   display: flex;
-  justify-content: space-between;
+  justify-content: center; 
   align-items: center;
-  background: rgba(10, 11, 16, 0.8); 
-  backdrop-filter: blur(10px);
+  background: rgba(10, 11, 16, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-
-  @media (max-width: 768px) {
-    padding: 20px;
-  }
+  border-bottom: 1px solid rgba(0, 242, 255, 0.1);
+  box-sizing: border-box; 
 `;
 
 const Logo = styled.div`
@@ -57,6 +55,19 @@ const NavLink = styled(Link)`
   }
 `;
 
+const NavContent = styled.div`
+  width: 100%;
+  max-width: 1200px; 
+  padding: 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+  }
+`;
+
 const HireButton = styled.a`
   background: transparent;
   border: 1px solid ${props => props.theme.colors.secondary};
@@ -89,6 +100,7 @@ export default function Navbar() {
 
   return (
     <NavContainer>
+      <NavContent>
       <Logo>
         DEV<span>.AI</span>
       </Logo>
@@ -107,6 +119,7 @@ export default function Navbar() {
       >
         Hire Me
       </HireButton>
+      </NavContent>
     </NavContainer>
   );
 }

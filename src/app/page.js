@@ -135,8 +135,11 @@ const SocialButton = styled.a`
 `;
 
 const ImageWrapper = styled.div`
-  width: 280px;
-  height: 280px;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
   background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
   padding: 5px;
   animation: morph 8s ease-in-out infinite;
@@ -158,7 +161,7 @@ export default function Home() {
           
           <TextSection>
             <Title>
-              Full Stack <span>AI Engineer.</span>
+               Desenvolver <span>Full Stack.</span>
             </Title>
             
             <ExpandedDescription>
@@ -168,17 +171,17 @@ export default function Home() {
             </ExpandedDescription>
 
             <HeroButtonGroup>
-              <SocialButton href="https://linkedin.com/in/seu-usuario" target="_blank" className="linkedin">
+              <SocialButton href="https://www.linkedin.com/in/patric-augusto-bab47b240/" target="_blank" className="linkedin">
                 LinkedIn
               </SocialButton>
-              <SocialButton href="https://github.com/seu-usuario" target="_blank" className="github">
+              <SocialButton href="https://github.com/PatricAugusto" target="_blank" className="github">
                 GitHub
               </SocialButton>
             </HeroButtonGroup>
           </TextSection>
 
           <ImageWrapper>
-            <img src="/PerfilOficialFoto.png" alt="Profile" />
+            <img src="/FotoPerfilJAN.jpg" alt="Profile" />
           </ImageWrapper>
           
         </HeroContent>

@@ -5,8 +5,8 @@ import GlassCard from './GlassCard';
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
-  gap: 30px;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 100%, 350px), 1fr));
+  gap: clamp(20px, 4vw, 35px);
   margin-top: 40px;
 `;
 
@@ -28,9 +28,11 @@ const InnerCard = styled.div`
 
 const ImageContainer = styled.div`
   width: 100%;
+  aspect-ratio: 16 / 9;
   height: 200px;
   overflow: hidden;
   position: relative;
+  border-bottom: 1px solid ${props => props.theme.colors.border};
 
   img {
     width: 100%;
@@ -45,10 +47,10 @@ const ImageContainer = styled.div`
 `;
 
 const CardContent = styled.div`
-  padding: 20px;
+  padding: clamp(15px, 3vw, 25px);
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 12px;
 `;
 
 const ProjectTitle = styled.h3`
@@ -64,10 +66,14 @@ const ProjectDescription = styled.p`
 `;
 
 const ButtonGroup = styled.div`
-  display: flex;
-  gap: 15px;
-  margin-top: auto;
-  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+
+  @media (max-width: 350px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ActionLink = styled.a`

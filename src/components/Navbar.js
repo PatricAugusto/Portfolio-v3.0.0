@@ -33,7 +33,7 @@ const Logo = styled.div`
 
 const NavLinks = styled.div`
   display: flex;
-  gap: 30px;
+  gap: clamp(15px, 3vw, 30px);
   align-items: center;
 
   @media (max-width: 768px) {
@@ -62,6 +62,7 @@ const NavContent = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 20px;
 
   @media (max-width: 768px) {
     padding: 0 20px;
@@ -76,10 +77,11 @@ const HireButton = styled.a`
   background: transparent;
   border: 1px solid ${props => props.theme.colors.secondary};
   color: ${props => props.theme.colors.secondary};
-  padding: 10px 24px;
+  white-space: nowrap;
+  padding: clamp(8px, 2vw, 12px) clamp(16px, 3vw, 28px);
   border-radius: 50px; 
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: clamp(0.75rem, 1.5vw, 0.9rem);
   text-decoration: none;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -95,7 +97,7 @@ const HireButton = styled.a`
   }
 
   @media (max-width: 480px) {
-    padding: 8px 16px;
+    padding: 8px 12px;
     font-size: 0.75rem;
   }
 `;

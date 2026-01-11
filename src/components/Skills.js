@@ -46,8 +46,8 @@ const MarqueeTrack = styled.div`
 `;
 
 const SkillCard = styled.div`
-  width: 230px;
-  height: 120px;
+  width: 200px;
+  height: 100px;
   margin: 0 10px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid ${props => props.theme.colors.border};
@@ -77,6 +77,11 @@ const SkillCard = styled.div`
     font-size: 1.1rem;
     font-weight: 700;
     color: ${props => props.theme.colors.light};
+  }
+
+  @media (max-width: 768px) {
+    width: 160px;
+    height: 80px;
   }
 `;
 

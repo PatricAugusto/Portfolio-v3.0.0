@@ -21,6 +21,11 @@ const GlassCard = styled.div`
     height: 2px;
     background: linear-gradient(90deg, transparent, ${props => props.theme.colors.secondary}, transparent);
   }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem; 
+    border-radius: 16px;
+  }
 `;
 
 export default GlassCard;

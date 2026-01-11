@@ -65,6 +65,10 @@ const NavContent = styled.div`
 
   @media (max-width: 768px) {
     padding: 0 20px;
+
+    .nav-links-desktop {
+      display: none;
+    }
   }
 `;
 
@@ -88,6 +92,11 @@ const HireButton = styled.a`
     color: ${props => props.theme.colors.primary};
     box-shadow: 0 0 20px ${props => props.theme.colors.secondary}44;
     transform: translateY(-2px);
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    font-size: 0.75rem;
   }
 `;
 

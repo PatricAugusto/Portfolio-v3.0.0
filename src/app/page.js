@@ -14,6 +14,11 @@ const PageWrapper = styled.main`
   padding: 140px 20px 80px 20px;
   position: relative;
   background-color: ${props => props.theme.colors.primary};
+
+  @media (max-width: 768px) {
+    gap: 40px; 
+    padding: 100px 15px 40px 15px;
+  }
 `;
 
 const BackgroundBlob = styled.div`
@@ -38,7 +43,12 @@ const HeroContent = styled.div`
   display: flex;
   align-items: center;
   gap: 60px;
-  @media (max-width: 968px) { flex-direction: column-reverse; text-align: center; }
+  
+  @media (max-width: 968px) {
+    flex-direction: column-reverse; 
+    text-align: center;
+    gap: 30px;
+  }
 `;
 
 const Title = styled.h1`
@@ -53,7 +63,10 @@ const Title = styled.h1`
     text-shadow: 0 0 20px ${props => props.theme.colors.secondary}44;
   }
 
-  @media (max-width: 768px) { font-size: 2.8rem; }
+  @media (max-width: 768px) {
+    font-size: 2.4rem; 
+    text-align: center;
+  }
 `;
 
 const TextSection = styled.div`

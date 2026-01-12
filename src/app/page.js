@@ -14,6 +14,7 @@ const PageWrapper = styled.main`
   padding: 140px 20px 80px 20px;
   position: relative;
   background-color: ${props => props.theme.colors.primary};
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
     gap: 40px; 

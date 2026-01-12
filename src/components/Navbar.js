@@ -18,6 +18,7 @@ const NavContainer = styled.nav`
   z-index: 1000;
   border-bottom: 1px solid rgba(0, 242, 255, 0.1);
   box-sizing: border-box; 
+  overflow-x: hidden;
 `;
 
 const LogoWrapper = styled(Link)`
@@ -90,14 +91,15 @@ const NavLink = styled(Link)`
 const NavContent = styled.div`
   width: 100%;
   max-width: 1200px; 
-  padding: 0 40px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
 
-  @media (max-width: 768px) {
-    padding: 0 15px;
+  @media (max-width: 480px) {
+    padding: 0 12px;
 
     .nav-links-desktop {
       display: none;

@@ -139,8 +139,8 @@ const ImageWrapper = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
   background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
   padding: 5px;
   animation: morph 8s ease-in-out infinite;

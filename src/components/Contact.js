@@ -151,25 +151,25 @@ export default function Contact() {
   return (
     <GlassCard style={{ maxWidth: '700px' }} id="contact">
       <h2 style={{ color: '#fff', textAlign: 'center', fontSize: '2rem' }}>
-        Start <span style={{ color: '#00f2ff' }}>Transmission_</span>
+        Começar <span style={{ color: '#00f2ff' }}>Transmissão_</span>
       </h2>
       <p style={{ textAlign: 'center', opacity: 0.7, marginBottom: '20px' }}>
-        Tem um projeto de IA ou .NET em mente? Vamos conectar os pontos.
+        Tem um projeto em mente? Vamos conectar os pontos.
       </p>
 
       {status === 'success' ? (
         <StatusMessage $type="success">
-          Transmission Complete. Message Received.
+          Transmissão concluída. Mensagem recebida.
           <button 
             onClick={() => setStatus('idle')} 
             style={{ display: 'block', margin: '15px auto 0', background: 'transparent', border: '1px solid currentColor', color: 'inherit', padding: '5px 15px', cursor: 'pointer', borderRadius: '4px' }}>
-            Send Another
+            Enviar outro
           </button>
         </StatusMessage>
       ) : (
         <Form ref={form} onSubmit={sendEmail} $loading={status === 'loading'}>
           <InputGroup>
-            <Label>Codename / Name</Label>
+            <Label>Codename / Nome</Label>
             <Input 
               type="text"
               name="name" 
@@ -180,7 +180,7 @@ export default function Contact() {
           </InputGroup>
 
           <InputGroup>
-            <Label>Communication Channel / Email</Label>
+            <Label>Canal de comunicação / Email</Label>
             <Input 
               type="email"
               name="email" 
@@ -191,7 +191,7 @@ export default function Contact() {
           </InputGroup>
 
           <InputGroup>
-            <Label>Payload / Message</Label>
+            <Label>Payload / Mensagem</Label>
             <TextArea 
               name="message" 
               placeholder="Descreva a missão..." 
@@ -202,7 +202,7 @@ export default function Contact() {
           
           {status === 'error' && (
             <StatusMessage $type="error">
-              Connection Failed. Please try again or check console.
+              Falha na conexão. Tente novamente ou verifique o console.
             </StatusMessage>
           )}
 

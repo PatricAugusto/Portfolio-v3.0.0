@@ -162,7 +162,7 @@ export default function Home() {
           
           <TextSection>
             <Title>
-               Desenvolver <span>Full Stack.</span>
+               Desenvolvedor <span>Full Stack.</span>
             </Title>
             
             <ExpandedDescription>

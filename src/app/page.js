@@ -4,6 +4,7 @@ import GlassCard from '@/components/GlassCard';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
 import Contact from '@/components/Contact';
+import Reveal from '@/components/Reveal';
 
 const PageWrapper = styled.main`
   min-height: 100vh;
@@ -157,6 +158,7 @@ export default function Home() {
       <BackgroundBlob />
       <AccentBlob />
 
+      <Reveal>
       <GlassCard style={{ maxWidth: '1150px' }}>
         <HeroContent>
           
@@ -187,10 +189,20 @@ export default function Home() {
           
         </HeroContent>
       </GlassCard>
+      </Reveal>
 
-      <Projects />
-      <Skills />
-      <Contact />
+      <Reveal delay={0.2}>
+        <Projects />
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <Skills />
+      </Reveal>
+
+      <Reveal delay={0.2}>
+        <Contact />
+      </Reveal>
+      
     </PageWrapper>
   );
 }

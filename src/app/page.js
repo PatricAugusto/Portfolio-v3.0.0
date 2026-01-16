@@ -11,8 +11,8 @@ const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 80px; 
-  padding: 40px 20px;
+  gap: 100px; 
+  padding: 120px 20px 80px 20px;
   position: relative;
   background-color: ${props => props.theme.colors.primary};
   overflow-x: hidden;

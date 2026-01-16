@@ -11,11 +11,12 @@ const PageWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100px; 
-  padding: 140px 20px 80px 20px;
+  gap: 80px; 
+  padding: 40px 20px;
   position: relative;
   background-color: ${props => props.theme.colors.primary};
   overflow-x: hidden;
+  width: 100%;
 
   @media (max-width: 768px) {
     gap: 40px; 
@@ -140,8 +141,8 @@ const ImageWrapper = styled.div`
   position: relative;
   top: 0;
   left: 0;
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   background: linear-gradient(135deg, ${props => props.theme.colors.secondary}, ${props => props.theme.colors.accent});
   padding: 5px;
   animation: morph 8s ease-in-out infinite;

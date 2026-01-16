@@ -105,21 +105,21 @@ export default function Projects() {
     {
       title: "O Corte Perfeito",
       desc: "website oficial da Barbearia Premium, refletindo digitalmente a experiência impecável e a excelência no corte.",
-      image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80",
+      image: "/barbearia.png",
       demo: "https://barber-glass-neo.vercel.app/",
       github: "https://github.com/PatricAugusto/barber-glass-neo"
     },
     {
       title: "Escritório de Advocacia",
       desc: "Este projeto foi desenvolvido para um escritório de advocacia, focada em um design moderno, elegante e de alta conversão, alinhado com as tendências de UI/UX de 2025.",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+      image: "/escritorio.png",
       demo: "https://free-template-juridico-v1.vercel.app/",
       github: "https://github.com/PatricAugusto/Free-Template-Juridico-v1"
     },
     {
       title: "Coffee Blend",
       desc: "Cafeteria que busca combinar um design acolhedor com funcionalidades de e-commerce (carrinho/checkout)",
-      image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&q=80",
+      image: "/cafeteria.png",
       demo: "https://free-template-cafeteria-v1.vercel.app/",
       github: "https://github.com/PatricAugusto/Free-Template-Cafeteria-v1"
     }

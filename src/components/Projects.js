@@ -1,18 +1,21 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
-import GlassCard from './GlassCard';
+import styled from "styled-components";
+import GlassCard from "./GlassCard";
 
 const ProjectGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(clamp(280px, 100%, 350px), 1fr));
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(clamp(280px, 100%, 350px), 1fr)
+  );
   gap: clamp(20px, 4vw, 35px);
   margin-top: 40px;
 `;
 
 const InnerCard = styled.div`
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid ${props => props.theme.colors.border};
+  border: 1px solid ${(props) => props.theme.colors.border};
   border-radius: 18px;
   overflow: hidden;
   display: flex;
@@ -21,7 +24,7 @@ const InnerCard = styled.div`
 
   &:hover {
     transform: translateY(-5px);
-    border-color: ${props => props.theme.colors.secondary};
+    border-color: ${(props) => props.theme.colors.secondary};
     box-shadow: 0 10px 30px rgba(0, 242, 255, 0.1);
   }
 `;
@@ -32,7 +35,7 @@ const ImageContainer = styled.div`
   height: 200px;
   overflow: hidden;
   position: relative;
-  border-bottom: 1px solid ${props => props.theme.colors.border};
+  border-bottom: 1px solid ${(props) => props.theme.colors.border};
 
   img {
     width: 100%;
@@ -54,12 +57,12 @@ const CardContent = styled.div`
 `;
 
 const ProjectTitle = styled.h3`
-  color: ${props => props.theme.colors.secondary};
+  color: ${(props) => props.theme.colors.secondary};
   font-size: 1.4rem;
 `;
 
 const ProjectDescription = styled.p`
-  color: ${props => props.theme.colors.light};
+  color: ${(props) => props.theme.colors.light};
   opacity: 0.7;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -67,7 +70,7 @@ const ProjectDescription = styled.p`
 
 const ButtonGroup = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 10px;
   margin-top: 20px;
 
@@ -88,15 +91,19 @@ const ActionLink = styled.a`
   transition: all 0.3s ease;
 
   &.primary {
-    background: ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.primary};
-    &:hover { filter: brightness(1.2); }
+    background: ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.primary};
+    &:hover {
+      filter: brightness(1.2);
+    }
   }
 
   &.secondary {
-    border: 1px solid ${props => props.theme.colors.secondary};
-    color: ${props => props.theme.colors.secondary};
-    &:hover { background: ${props => props.theme.colors.secondary}11; }
+    border: 1px solid ${(props) => props.theme.colors.secondary};
+    color: ${(props) => props.theme.colors.secondary};
+    &:hover {
+      background: ${(props) => props.theme.colors.secondary}11;
+    }
   }
 `;
 
@@ -107,52 +114,53 @@ export default function Projects() {
       desc: "website oficial da Barbearia Premium, refletindo digitalmente a experiência impecável e a excelência no corte.",
       image: "/barbearia.png",
       demo: "https://barber-glass-neo.vercel.app/",
-      github: "https://github.com/PatricAugusto/barber-glass-neo"
+      github: "https://github.com/PatricAugusto/barber-glass-neo",
     },
     {
       title: "Escritório de Advocacia",
       desc: "Este projeto foi desenvolvido para um escritório de advocacia, focada em um design moderno, elegante e de alta conversão, alinhado com as tendências de UI/UX de 2025.",
       image: "/escritorio.png",
       demo: "https://free-template-juridico-v1.vercel.app/",
-      github: "https://github.com/PatricAugusto/Free-Template-Juridico-v1"
+      github: "https://github.com/PatricAugusto/Free-Template-Juridico-v1",
     },
     {
       title: "Coffee Blend",
       desc: "Cafeteria que busca combinar um design acolhedor com funcionalidades de e-commerce (carrinho/checkout)",
       image: "/cafeteria.png",
       demo: "https://free-template-cafeteria-v1.vercel.app/",
-      github: "https://github.com/PatricAugusto/Free-Template-Cafeteria-v1"
+      github: "https://github.com/PatricAugusto/Free-Template-Cafeteria-v1",
     },
     {
       title: "Buscador de empresas por CNPJ",
       desc: "API REST para consulta e gerenciamento de dados públicos de empresas brasileiras via CNPJ. Consome a BrasilAPI, persiste os dados localmente e expõe endpoints de busca com paginação e suporte a favoritos.",
       image: "/Buscador.png",
-      github: "https://github.com/PatricAugusto/Buscador-de-empresas-por-CNPJ"
+      github: "https://github.com/PatricAugusto/Buscador-de-empresas-por-CNPJ",
     },
     {
       title: "API de chat em tempo real",
       desc: "API de chat em tempo real com suporte a salas, mensagens privadas e presença de usuários, construída com Node.js, Express e Socket.IO",
       image: "/chat.png",
-      github: "https://github.com/PatricAugusto/API-de-chat-em-tempo-real"
+      github: "https://github.com/PatricAugusto/API-de-chat-em-tempo-real",
     },
     {
       title: "Auth API",
       desc: "API de autenticação completa construída com Node.js e Express, com cadastro de usuários, login com JWT, refresh token e controle de sessão.",
       image: "/Auth.png",
-      github: "https://github.com/PatricAugusto/API-de-auth"
+      github: "https://github.com/PatricAugusto/API-de-auth",
     },
     {
       title: "API de Receitas com IA",
       desc: "API REST desenvolvida com Node.js e Express que utiliza inteligência artificial para sugerir receitas com base nos ingredientes que o usuário tem disponíveis.",
       image: "/Receitas.png",
-      github: "https://github.com/PatricAugusto/API-de-Receita-com-IA"
+      github: "https://github.com/PatricAugusto/API-de-Receita-com-IA",
     },
-    
   ];
 
   return (
-    <GlassCard style={{ maxWidth: '1100px' }} id="projects">
-      <h2 style={{ color: '#fff', fontSize: '2rem' }}>Projetos em <span>Destaque_</span></h2>
+    <GlassCard style={{ maxWidth: "1100px" }} id="projects">
+      <h2 style={{ color: "#fff", fontSize: "2rem" }}>
+        Projetos em <span>Destaque_</span>
+      </h2>
       <ProjectGrid>
         {projects.map((p, i) => (
           <InnerCard key={i}>
@@ -163,8 +171,19 @@ export default function Projects() {
               <ProjectTitle>{p.title}</ProjectTitle>
               <ProjectDescription>{p.desc}</ProjectDescription>
               <ButtonGroup>
-                <ActionLink href={p.demo} className="primary">Live Demo</ActionLink>
-                <ActionLink href={p.github} className="secondary">Source Code</ActionLink>
+                {p.demo && (
+                  <ActionLink href={p.demo} className="primary" target="_blank">
+                    Live Demo
+                  </ActionLink>
+                )}
+
+                <ActionLink
+                  href={p.github}
+                  className="secondary"
+                  target="_blank"
+                >
+                  Source Code
+                </ActionLink>
               </ButtonGroup>
             </CardContent>
           </InnerCard>

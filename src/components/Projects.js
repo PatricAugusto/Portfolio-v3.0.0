@@ -122,7 +122,32 @@ export default function Projects() {
       image: "/cafeteria.png",
       demo: "https://free-template-cafeteria-v1.vercel.app/",
       github: "https://github.com/PatricAugusto/Free-Template-Cafeteria-v1"
-    }
+    },
+    {
+      title: "Buscador de empresas por CNPJ",
+      desc: "API REST para consulta e gerenciamento de dados públicos de empresas brasileiras via CNPJ. Consome a BrasilAPI, persiste os dados localmente e expõe endpoints de busca com paginação e suporte a favoritos.",
+      image: "/Buscador.png",
+      github: "https://github.com/PatricAugusto/Buscador-de-empresas-por-CNPJ"
+    },
+    {
+      title: "API de chat em tempo real",
+      desc: "API de chat em tempo real com suporte a salas, mensagens privadas e presença de usuários, construída com Node.js, Express e Socket.IO",
+      image: "/chat.png",
+      github: "https://github.com/PatricAugusto/API-de-chat-em-tempo-real"
+    },
+    {
+      title: "Auth API",
+      desc: "API de autenticação completa construída com Node.js e Express, com cadastro de usuários, login com JWT, refresh token e controle de sessão.",
+      image: "/Auth.png",
+      github: "https://github.com/PatricAugusto/API-de-auth"
+    },
+    {
+      title: "API de Receitas com IA",
+      desc: "API REST desenvolvida com Node.js e Express que utiliza inteligência artificial para sugerir receitas com base nos ingredientes que o usuário tem disponíveis.",
+      image: "/Receitas.png",
+      github: "https://github.com/PatricAugusto/API-de-Receita-com-IA"
+    },
+    
   ];
 
   return (

@@ -169,7 +169,7 @@ export default function Home() {
             </Title>
             
             <ExpandedDescription>
-              Especialista em unir a potência da <strong>Inteligência Artificial</strong> com arquiteturas escaláveis em <strong>C# e .NET</strong>. 
+              Especialista em unir a potência da <strong>Inteligência Artificial</strong> com arquiteturas escaláveis em <strong>Node.JS e Express</strong>. 
               Desenvolvo experiências digitais de alta performance utilizando <strong>React e Next.js</strong>, 
               focando em transformar dados complexos em interfaces intuitivas e modernas.
             </ExpandedDescription>

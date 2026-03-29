@@ -89,7 +89,7 @@ export default function Skills() {
   const coreStack = [
     { label: "Expertise", value: "AI Specialist" },
     { label: "Frontend", value: "React & Next.js" },
-    { label: "Backend", value: "C# & .NET" },
+    { label: "Backend", value: "Node.JS & Express" },
     { label: "Database", value: "SQL" },
     { label: "Languages", value: "TS & JS" },
   ];

@@ -10,6 +10,7 @@ const FooterContainer = styled.footer`
   border-top: 1px solid rgba(0, 242, 255, 0.05);
   box-sizing: border-box;
   position: relative;
+  overflow: hidden;
 `;
 
 const FooterContent = styled.div`
@@ -68,6 +69,8 @@ const SystemStatus = styled.div`
 const SocialLinks = styled.div`
   display: flex;
   gap: 20px;
+  justify-content: center; 
+  flex-wrap: wrap;
 
   a {
     color: ${props => props.theme.colors.light}cc;
@@ -77,6 +80,7 @@ const SocialLinks = styled.div`
     transition: all 0.3s ease;
     padding: 5px 10px;
     border: 1px solid transparent;
+    white-space: nowrap;
 
     &:hover {
       color: ${props => props.theme.colors.secondary};
@@ -84,6 +88,10 @@ const SocialLinks = styled.div`
       background: ${props => props.theme.colors.secondary}11;
       transform: translateY(-3px);
     }
+
+    @media (max-width: 480px) {
+    gap: 10px;
+  }
   }
 `;
 
